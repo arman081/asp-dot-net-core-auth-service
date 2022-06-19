@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  ms.sqlserver.instance:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+
+  extendingidentityuser.mvc:
+    image: ${DOCKER_REGISTRY-}extendingidentityusermvc
+    build:
+      context: .
+      dockerfile: ExtendingIdentityUser.MVC/Dockerfile
